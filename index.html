@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Document</title>
+
+	<style type="text/css">
+		.container {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			grid-template-rows: 100px 100px 100px 100px;
+			gap: 10px;
+		}
+
+		.container div {
+			text-align: center;
+		}
+
+		.item1 {
+			grid-column-start: span 3;/*Количество занимаемых колонок */
+			grid-row-start: span 3;/*Количество занимаемых рядов */
+		}
+
+		.container div img {
+			height: 100%;
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<div  class="item1"><img src="./img/img1.jpg" alt="img1" class="item1Alt"></div>
+		<div><img src="./img/img2.jpg" alt="img2" class="item"></div>
+		<div><img src="./img/img3.jpg" alt="img3" class="item"></div>
+		<div><img src="./img/img4.jpg" alt="img4" class="item"></div>
+		<div><img src="./img/img5.jpg" alt="img5" class="item"></div>
+		<div><img src="./img/img6.jpg" alt="img6" class="item"></div>
+		<div><img src="./img/img7.jpg" alt="img7" class="item"></div>
+		<div><img src="./img/img8.jpg" alt="img8" class="item"></div>
+	</div>
+
+	<script type="text/javascript">
+		let item1Alt = document.querySelector('.item1Alt');
+		let item = document.querySelectorAll('.item');
+
+		for (let i = 0; i <  item.length; i++) {
+
+			let itemAlt = item[i].getAttribute('src');
+
+			item[i].onclick = function() {
+				item1Alt.src = itemAlt;
+			};
+		}
+
+	</script>
+</body>
+</html>
